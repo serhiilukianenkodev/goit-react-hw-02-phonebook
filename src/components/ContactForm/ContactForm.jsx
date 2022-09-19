@@ -1,4 +1,6 @@
 import { Component } from 'react';
+import { Form, Label } from 'components/ContactForm/ContactFormStyled';
+import { Button } from 'components/Utils/ButtonStyled';
 
 const initialState = {
   name: '',
@@ -24,8 +26,8 @@ export class ContactForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
+      <Form onSubmit={this.handleSubmit}>
+        <Label>
           Name
           <input
             type="text"
@@ -36,9 +38,9 @@ export class ContactForm extends Component {
             onChange={this.handleChange}
             required
           />
-        </label>
+        </Label>
 
-        <label>
+        <Label>
           Number
           <input
             type="tel"
@@ -49,9 +51,9 @@ export class ContactForm extends Component {
             onChange={this.handleChange}
             required
           />
-        </label>
-        <button type="submit">Add contact</button>
-      </form>
+        </Label>
+        <Button type="submit">Add contact</Button>
+      </Form>
     );
   }
 }

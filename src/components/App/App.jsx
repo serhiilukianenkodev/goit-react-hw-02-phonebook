@@ -1,9 +1,10 @@
 import { Component } from 'react';
-import { GlobalStyle } from './GlobalStyle';
+import { GlobalStyle } from '../GlobalStyle';
 import { nanoid } from 'nanoid';
 import { ContactForm } from 'components/ContactForm';
 import { ContactList } from 'components/ContactList';
 import { Filter } from 'components/Filter';
+import { HeadingPrimary } from 'components/App/AppStyled';
 
 const defaultContacts = [
   { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
@@ -60,7 +61,7 @@ export class App extends Component {
       <div>
         <h1>Phonebook</h1>
         <ContactForm onSubmit={this.addContact} />
-        <h2>Contacts</h2>
+        <HeadingPrimary>Contacts</HeadingPrimary>
         <Filter
           onFilterChange={this.onFilterChange}
           value={this.state.filter}
